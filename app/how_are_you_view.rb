@@ -2,7 +2,7 @@ class HowAreYouView < UIView
   def initWithFrame(rect)
     if super(rect)
       self.backgroundColor = UIColor.whiteColor
-      @fine_button = UIGlassButton.buttonWithType(UIButtonTypeCustom)
+      @fine_button = UIButton.buttonWithType(UIButtonTypeCustom)
       @fine_button.setTitle("I'm fine", forState: UIControlStateNormal)
       @fine_button.tintColor = UIColor.greenColor
       @fine_button.titleLabel.font = UIFont.systemFontOfSize(42)
@@ -10,7 +10,7 @@ class HowAreYouView < UIView
       self.addSubview(@fine_button)
       
 
-      @help_button = UIGlassButton.buttonWithType(UIButtonTypeCustom)
+      @help_button = UIButton.buttonWithType(UIButtonTypeCustom)
       @help_button.setTitle('Help!', forState: UIControlStateNormal)
       @help_button.titleLabel.font = UIFont.systemFontOfSize(42)
       @help_button.tintColor = UIColor.redColor
