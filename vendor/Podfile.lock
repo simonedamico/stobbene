@@ -1,0 +1,9 @@
+PODS:
+  - AFNetworking (1.0RC1)
+  - Facebook-iOS-SDK (1.2):
+    - SBJson (= 2.2.3)
+  - SBJson (2.2.3)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Facebook-iOS-SDK
