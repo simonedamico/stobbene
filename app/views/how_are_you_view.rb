@@ -1,7 +1,6 @@
 class HowAreYouView < UIView
   def initWithFrame(rect)
     if super(rect)
-      self.backgroundColor = UIColor.whiteColor
       @fine_button = UIButton.buttonWithType(UIButtonTypeCustom)
       @fine_button.setTitle("I'm fine", forState: UIControlStateNormal)
       @fine_button.tintColor = UIColor.greenColor
@@ -16,6 +15,7 @@ class HowAreYouView < UIView
       @help_button.tintColor = UIColor.redColor
       @help_button.sizeToFit
       self.addSubview(@help_button)
+
 
       
     end

@@ -18,7 +18,7 @@ class LoginController < UIViewController
     completion_block = lambda do
       
       success_block = lambda do |request, response, result|
-        App.delegate.window.rootViewController = HowAreYouController.alloc.init
+        App.delegate.window.rootViewController = UINavigationController.alloc.initWithRootViewController(HowAreYouController.alloc.init)
       end
       failure_block = lambda do |request, response, result|
         puts "NOOOO"

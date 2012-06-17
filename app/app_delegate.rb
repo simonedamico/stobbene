@@ -20,7 +20,7 @@ class AppDelegate
     
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     if @logged
-      rootVC = HowAreYouController.alloc.init 
+      rootVC = UINavigationController.alloc.initWithRootViewController(HowAreYouController.alloc.init)
     else
       rootVC = LoginController.alloc.init
     end
@@ -28,6 +28,8 @@ class AppDelegate
     @window.rootViewController = rootVC
     @window.backgroundColor = UIColor.greenColor
     @window.makeKeyAndVisible
+
+    UINavigationBar.appearance.tintColor = UIColor.colorWithRed(250, green:250, blue:250, alpha:1)
 
     true
   end
