@@ -2,10 +2,10 @@ class LoginView < UIView
   attr_reader :facebook_button
   def initWithFrame(rect)
     if super(rect)
-      self.backgroundColor = UIColor.whiteColor
+      self.backgroundColor = UIColor.colorWithPatternImage(UIImage.imageNamed("BackLogin"))
       
-      @facebook_button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
-      @facebook_button.setTitle('Enter with Facebook', forState: UIControlStateNormal)
+      @facebook_button = UIButton.buttonWithType(UIButtonTypeCustom)
+      @facebook_button.setBackgroundImage(UIImage.imageNamed("ButtonLoginFb"), forState:UIControlStateNormal)
       @facebook_button.sizeToFit
       self.addSubview(@facebook_button)
       

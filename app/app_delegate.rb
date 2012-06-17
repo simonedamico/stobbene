@@ -26,6 +26,7 @@ class AppDelegate
     end
     
     @window.rootViewController = rootVC
+    @window.backgroundColor = UIColor.greenColor
     @window.makeKeyAndVisible
 
     true
