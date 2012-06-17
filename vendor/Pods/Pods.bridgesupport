@@ -1,47 +1,64 @@
 <?xml version='1.0'?>
 <signatures version='1.0'>
-<constant const='true' name='AFNetworkingErrorDomain' declared_type='NSString*' type='@'/>
-<constant const='true' name='AFNetworkingOperationDidFinishNotification' declared_type='NSString*' type='@'/>
-<constant const='true' name='AFNetworkingOperationDidStartNotification' declared_type='NSString*' type='@'/>
+<constant declared_type='NSString*' const='true' type='@' name='AFNetworkingErrorDomain'/>
+<constant declared_type='NSString*' const='true' type='@' name='AFNetworkingOperationDidFinishNotification'/>
+<constant declared_type='NSString*' const='true' type='@' name='AFNetworkingOperationDidStartNotification'/>
+<constant declared_type='NSString*' type='@' name='SBJSONErrorDomain'/>
 <enum value='0' name='AFFormURLParameterEncoding'/>
 <enum value='1' name='AFJSONParameterEncoding'/>
 <enum value='2' name='AFPropertyListParameterEncoding'/>
+<enum value='5' name='ECTRL'/>
+<enum value='7' name='EDEPTH'/>
+<enum value='11' name='EEOF'/>
+<enum value='8' name='EESCAPE'/>
+<enum value='4' name='EFRAGMENT'/>
+<enum value='12' name='EINPUT'/>
+<enum value='3' name='EPARSE'/>
+<enum value='2' name='EPARSENUM'/>
+<enum value='9' name='ETRAILCOMMA'/>
+<enum value='10' name='ETRAILGARBAGE'/>
+<enum value='6' name='EUNICODE'/>
+<enum value='1' name='EUNSUPPORTED'/>
+<enum value='2' name='kFBRequestStateComplete'/>
+<enum value='3' name='kFBRequestStateError'/>
+<enum value='1' name='kFBRequestStateLoading'/>
+<enum value='0' name='kFBRequestStateReady'/>
 <function name='AFContentTypesFromHTTPHeader'>
-<arg name='string' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' type='@' name='string'/>
 <retval declared_type='NSSet*' type='@'/>
 </function>
 <function name='AFCreateIncompleteDownloadDirectoryPath'>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='AFJSONDecode'>
-<arg name='data' declared_type='NSData*' type='@'/>
-<arg name='error' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSData*' type='@' name='data'/>
+<arg declared_type='NSError**' type='^@' name='error'/>
 <retval declared_type='id' type='@'/>
 </function>
 <function name='AFJSONEncode'>
-<arg name='object' declared_type='id' type='@'/>
-<arg name='error' declared_type='NSError**' type='^@'/>
+<arg declared_type='id' type='@' name='object'/>
+<arg declared_type='NSError**' type='^@' name='error'/>
 <retval declared_type='NSData*' type='@'/>
 </function>
 <function name='AFQueryStringFromParametersWithEncoding'>
-<arg name='parameters' declared_type='NSDictionary*' type='@'/>
-<arg name='encoding' declared_type='NSStringEncoding' type='I'/>
+<arg declared_type='NSDictionary*' type='@' name='parameters'/>
+<arg declared_type='NSStringEncoding' type='I' name='encoding'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='AFURLEncodedStringFromStringWithEncoding'>
-<arg name='string' declared_type='NSString*' type='@'/>
-<arg name='encoding' declared_type='NSStringEncoding' type='I'/>
+<arg declared_type='NSString*' type='@' name='string'/>
+<arg declared_type='NSStringEncoding' type='I' name='encoding'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <class name='AFHTTPClient'>
 <method selector='HTTPRequestOperationWithRequest:success:failure:'>
-<arg name='request' declared_type='NSURLRequest*' index='0' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(AFHTTPRequestOperation *, id)' index='1' type='@?'>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='request'/>
+<arg function_pointer='true' index='1' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='2' type='@?'>
+<arg function_pointer='true' index='2' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -52,30 +69,30 @@
 <retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='cancelAllHTTPOperationsWithMethod:path:'>
-<arg name='method' declared_type='NSString*' index='0' type='@'/>
-<arg name='path' declared_type='NSString*' index='1' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='method'/>
+<arg index='1' declared_type='NSString*' type='@' name='path'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='clearAuthorizationHeader'>
 <retval declared_type='void' type='v'/>
 </method>
 <method class_method='true' selector='clientWithBaseURL:'>
-<arg name='url' declared_type='NSURL*' index='0' type='@'/>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
 <retval declared_type='AFHTTPClient*' type='@'/>
 </method>
 <method selector='defaultValueForHeader:'>
-<arg name='header' declared_type='NSString*' index='0' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='header'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='deletePath:parameters:success:failure:'>
-<arg name='path' declared_type='NSString*' index='0' type='@'/>
-<arg name='parameters' declared_type='NSDictionary*' index='1' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?'>
+<arg index='0' declared_type='NSString*' type='@' name='path'/>
+<arg index='1' declared_type='NSDictionary*' type='@' name='parameters'/>
+<arg function_pointer='true' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?'>
+<arg function_pointer='true' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -83,44 +100,44 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueBatchOfHTTPRequestOperations:progressBlock:completionBlock:'>
-<arg name='operations' declared_type='NSArray*' index='0' type='@'/>
-<arg function_pointer='true' name='progressBlock' declared_type='void (^)(NSUInteger, NSUInteger)' index='1' type='@?'>
+<arg index='0' declared_type='NSArray*' type='@' name='operations'/>
+<arg function_pointer='true' index='1' declared_type='void (^)(NSUInteger, NSUInteger)' type='@?' name='progressBlock'>
 <arg declared_type='NSUInteger' type='I'/>
 <arg declared_type='NSUInteger' type='I'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='completionBlock' declared_type='void (^)(NSArray *)' index='2' type='@?'>
+<arg function_pointer='true' index='2' declared_type='void (^)(NSArray *)' type='@?' name='completionBlock'>
 <arg declared_type='NSArray*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueBatchOfHTTPRequestOperationsWithRequests:progressBlock:completionBlock:'>
-<arg name='requests' declared_type='NSArray*' index='0' type='@'/>
-<arg function_pointer='true' name='progressBlock' declared_type='void (^)(NSUInteger, NSUInteger)' index='1' type='@?'>
+<arg index='0' declared_type='NSArray*' type='@' name='requests'/>
+<arg function_pointer='true' index='1' declared_type='void (^)(NSUInteger, NSUInteger)' type='@?' name='progressBlock'>
 <arg declared_type='NSUInteger' type='I'/>
 <arg declared_type='NSUInteger' type='I'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='completionBlock' declared_type='void (^)(NSArray *)' index='2' type='@?'>
+<arg function_pointer='true' index='2' declared_type='void (^)(NSArray *)' type='@?' name='completionBlock'>
 <arg declared_type='NSArray*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueHTTPRequestOperation:'>
-<arg name='operation' declared_type='AFHTTPRequestOperation*' index='0' type='@'/>
+<arg index='0' declared_type='AFHTTPRequestOperation*' type='@' name='operation'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='getPath:parameters:success:failure:'>
-<arg name='path' declared_type='NSString*' index='0' type='@'/>
-<arg name='parameters' declared_type='NSDictionary*' index='1' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?'>
+<arg index='0' declared_type='NSString*' type='@' name='path'/>
+<arg index='1' declared_type='NSDictionary*' type='@' name='parameters'/>
+<arg function_pointer='true' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?'>
+<arg function_pointer='true' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -128,14 +145,14 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='initWithBaseURL:'>
-<arg name='url' declared_type='NSURL*' index='0' type='@'/>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='multipartFormRequestWithMethod:path:parameters:constructingBodyWithBlock:'>
-<arg name='method' declared_type='NSString*' index='0' type='@'/>
-<arg name='path' declared_type='NSString*' index='1' type='@'/>
-<arg name='parameters' declared_type='NSDictionary*' index='2' type='@'/>
-<arg function_pointer='true' name='block' declared_type='void (^)(id)' index='3' type='@?'>
+<arg index='0' declared_type='NSString*' type='@' name='method'/>
+<arg index='1' declared_type='NSString*' type='@' name='path'/>
+<arg index='2' declared_type='NSDictionary*' type='@' name='parameters'/>
+<arg function_pointer='true' index='3' declared_type='void (^)(id)' type='@?' name='block'>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
@@ -148,14 +165,14 @@
 <retval declared_type='AFHTTPClientParameterEncoding' type='i'/>
 </method>
 <method selector='patchPath:parameters:success:failure:'>
-<arg name='path' declared_type='NSString*' index='0' type='@'/>
-<arg name='parameters' declared_type='NSDictionary*' index='1' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?'>
+<arg index='0' declared_type='NSString*' type='@' name='path'/>
+<arg index='1' declared_type='NSDictionary*' type='@' name='parameters'/>
+<arg function_pointer='true' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?'>
+<arg function_pointer='true' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -163,14 +180,14 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='postPath:parameters:success:failure:'>
-<arg name='path' declared_type='NSString*' index='0' type='@'/>
-<arg name='parameters' declared_type='NSDictionary*' index='1' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?'>
+<arg index='0' declared_type='NSString*' type='@' name='path'/>
+<arg index='1' declared_type='NSDictionary*' type='@' name='parameters'/>
+<arg function_pointer='true' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?'>
+<arg function_pointer='true' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -178,14 +195,14 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='putPath:parameters:success:failure:'>
-<arg name='path' declared_type='NSString*' index='0' type='@'/>
-<arg name='parameters' declared_type='NSDictionary*' index='1' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?'>
+<arg index='0' declared_type='NSString*' type='@' name='path'/>
+<arg index='1' declared_type='NSDictionary*' type='@' name='parameters'/>
+<arg function_pointer='true' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?'>
+<arg function_pointer='true' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -193,42 +210,42 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='registerHTTPOperationClass:'>
-<arg name='operationClass' declared_type='Class' index='0' type='#'/>
+<arg index='0' declared_type='Class' type='#' name='operationClass'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='requestWithMethod:path:parameters:'>
-<arg name='method' declared_type='NSString*' index='0' type='@'/>
-<arg name='path' declared_type='NSString*' index='1' type='@'/>
-<arg name='parameters' declared_type='NSDictionary*' index='2' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='method'/>
+<arg index='1' declared_type='NSString*' type='@' name='path'/>
+<arg index='2' declared_type='NSDictionary*' type='@' name='parameters'/>
 <retval declared_type='NSMutableURLRequest*' type='@'/>
 </method>
 <method selector='setAuthorizationHeaderWithToken:'>
-<arg name='token' declared_type='NSString*' index='0' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='token'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setAuthorizationHeaderWithUsername:password:'>
-<arg name='username' declared_type='NSString*' index='0' type='@'/>
-<arg name='password' declared_type='NSString*' index='1' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='username'/>
+<arg index='1' declared_type='NSString*' type='@' name='password'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setDefaultHeader:value:'>
-<arg name='header' declared_type='NSString*' index='0' type='@'/>
-<arg name='value' declared_type='NSString*' index='1' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='header'/>
+<arg index='1' declared_type='NSString*' type='@' name='value'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setParameterEncoding:'>
-<arg name='parameterEncoding' declared_type='AFHTTPClientParameterEncoding' index='0' type='i'/>
+<arg index='0' declared_type='AFHTTPClientParameterEncoding' type='i' name='parameterEncoding'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setStringEncoding:'>
-<arg name='stringEncoding' declared_type='NSStringEncoding' index='0' type='I'/>
+<arg index='0' declared_type='NSStringEncoding' type='I' name='stringEncoding'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='stringEncoding'>
 <retval declared_type='NSStringEncoding' type='I'/>
 </method>
 <method selector='unregisterHTTPOperationClass:'>
-<arg name='operationClass' declared_type='Class' index='0' type='#'/>
+<arg index='0' declared_type='Class' type='#' name='operationClass'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -240,15 +257,15 @@
 <retval declared_type='NSIndexSet*' type='@'/>
 </method>
 <method class_method='true' selector='addAcceptableContentTypes:'>
-<arg name='contentTypes' declared_type='NSSet*' index='0' type='@'/>
+<arg index='0' declared_type='NSSet*' type='@' name='contentTypes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method class_method='true' selector='addAcceptableStatusCodes:'>
-<arg name='statusCodes' declared_type='NSIndexSet*' index='0' type='@'/>
+<arg index='0' declared_type='NSIndexSet*' type='@' name='statusCodes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method class_method='true' selector='canProcessRequest:'>
-<arg name='urlRequest' declared_type='NSURLRequest*' index='0' type='@'/>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='urlRequest'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='failureCallbackQueue'>
@@ -270,12 +287,12 @@
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='setCompletionBlockWithSuccess:failure:'>
-<arg function_pointer='true' name='success' declared_type='void (^)(AFHTTPRequestOperation *, id)' index='0' type='@?'>
+<arg function_pointer='true' index='0' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='1' type='@?'>
+<arg function_pointer='true' index='1' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -283,15 +300,15 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setFailureCallbackQueue:'>
-<arg name='failureCallbackQueue' declared_type='dispatch_queue_t' index='0' type='^{dispatch_queue_s=}'/>
+<arg index='0' declared_type='dispatch_queue_t' type='^{dispatch_queue_s=}' name='failureCallbackQueue'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setResponseFilePath:'>
-<arg name='responseFilePath' declared_type='NSString*' index='0' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='responseFilePath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSuccessCallbackQueue:'>
-<arg name='successCallbackQueue' declared_type='dispatch_queue_t' index='0' type='^{dispatch_queue_s=}'/>
+<arg index='0' declared_type='dispatch_queue_t' type='^{dispatch_queue_s=}' name='successCallbackQueue'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='successCallbackQueue'>
@@ -303,19 +320,19 @@
 </class>
 <class name='AFImageRequestOperation'>
 <method class_method='true' selector='imageRequestOperationWithRequest:imageProcessingBlock:cacheName:success:failure:'>
-<arg name='urlRequest' declared_type='NSURLRequest*' index='0' type='@'/>
-<arg function_pointer='true' name='imageProcessingBlock' declared_type='UIImage *(^)(UIImage *)' index='1' type='@?'>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='urlRequest'/>
+<arg function_pointer='true' index='1' declared_type='UIImage *(^)(UIImage *)' type='@?' name='imageProcessingBlock'>
 <arg declared_type='UIImage*' type='@'/>
 <retval declared_type='UIImage*' type='@'/>
 </arg>
-<arg name='cacheNameOrNil' declared_type='NSString*' index='2' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' index='3' type='@?'>
+<arg index='2' declared_type='NSString*' type='@' name='cacheNameOrNil'/>
+<arg function_pointer='true' index='3' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' type='@?' name='success'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='UIImage*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' index='4' type='@?'>
+<arg function_pointer='true' index='4' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' type='@?' name='failure'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -324,8 +341,8 @@
 <retval declared_type='AFImageRequestOperation*' type='@'/>
 </method>
 <method class_method='true' selector='imageRequestOperationWithRequest:success:'>
-<arg name='urlRequest' declared_type='NSURLRequest*' index='0' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(UIImage *)' index='1' type='@?'>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='urlRequest'/>
+<arg function_pointer='true' index='1' declared_type='void (^)(UIImage *)' type='@?' name='success'>
 <arg declared_type='UIImage*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
@@ -338,20 +355,20 @@
 <retval declared_type='UIImage*' type='@'/>
 </method>
 <method selector='setImageScale:'>
-<arg name='imageScale' declared_type='CGFloat' index='0' type='f'/>
+<arg index='0' declared_type='CGFloat' type='f' name='imageScale'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='AFJSONRequestOperation'>
 <method class_method='true' selector='JSONRequestOperationWithRequest:success:failure:'>
-<arg name='urlRequest' declared_type='NSURLRequest*' index='0' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' index='1' type='@?'>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='urlRequest'/>
+<arg function_pointer='true' index='1' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' type='@?' name='success'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' index='2' type='@?'>
+<arg function_pointer='true' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' type='@?' name='failure'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -378,7 +395,7 @@
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setEnabled:'>
-<arg name='enabled' declared_type='BOOL' index='0' type='B'/>
+<arg index='0' declared_type='BOOL' type='B' name='enabled'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method class_method='true' selector='sharedManager'>
@@ -390,14 +407,14 @@
 <retval declared_type='NSPropertyListReadOptions' type='I'/>
 </method>
 <method class_method='true' selector='propertyListRequestOperationWithRequest:success:failure:'>
-<arg name='urlRequest' declared_type='NSURLRequest*' index='0' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' index='1' type='@?'>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='urlRequest'/>
+<arg function_pointer='true' index='1' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' type='@?' name='success'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' index='2' type='@?'>
+<arg function_pointer='true' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' type='@?' name='failure'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -410,7 +427,7 @@
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='setPropertyListReadOptions:'>
-<arg name='propertyListReadOptions' declared_type='NSPropertyListReadOptions' index='0' type='I'/>
+<arg index='0' declared_type='NSPropertyListReadOptions' type='I' name='propertyListReadOptions'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -419,7 +436,7 @@
 <retval declared_type='NSError*' type='@'/>
 </method>
 <method selector='initWithRequest:'>
-<arg name='urlRequest' declared_type='NSURLRequest*' index='0' type='@'/>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='urlRequest'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='inputStream'>
@@ -453,7 +470,7 @@
 <retval declared_type='NSSet*' type='@'/>
 </method>
 <method selector='setAuthenticationAgainstProtectionSpaceBlock:'>
-<arg function_pointer='true' name='block' declared_type='BOOL (^)(NSURLConnection *, NSURLProtectionSpace *)' index='0' type='@?'>
+<arg function_pointer='true' index='0' declared_type='BOOL (^)(NSURLConnection *, NSURLProtectionSpace *)' type='@?' name='block'>
 <arg declared_type='NSURLConnection*' type='@'/>
 <arg declared_type='NSURLProtectionSpace*' type='@'/>
 <retval declared_type='BOOL' type='B'/>
@@ -461,7 +478,7 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setAuthenticationChallengeBlock:'>
-<arg function_pointer='true' name='block' declared_type='void (^)(NSURLConnection *, NSURLAuthenticationChallenge *)' index='0' type='@?'>
+<arg function_pointer='true' index='0' declared_type='void (^)(NSURLConnection *, NSURLAuthenticationChallenge *)' type='@?' name='block'>
 <arg declared_type='NSURLConnection*' type='@'/>
 <arg declared_type='NSURLAuthenticationChallenge*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -469,7 +486,7 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setCacheResponseBlock:'>
-<arg function_pointer='true' name='block' declared_type='NSCachedURLResponse *(^)(NSURLConnection *, NSCachedURLResponse *)' index='0' type='@?'>
+<arg function_pointer='true' index='0' declared_type='NSCachedURLResponse *(^)(NSURLConnection *, NSCachedURLResponse *)' type='@?' name='block'>
 <arg declared_type='NSURLConnection*' type='@'/>
 <arg declared_type='NSCachedURLResponse*' type='@'/>
 <retval declared_type='NSCachedURLResponse*' type='@'/>
@@ -477,7 +494,7 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setDownloadProgressBlock:'>
-<arg function_pointer='true' name='block' declared_type='void (^)(NSInteger, long long, long long)' index='0' type='@?'>
+<arg function_pointer='true' index='0' declared_type='void (^)(NSInteger, long long, long long)' type='@?' name='block'>
 <arg declared_type='NSInteger' type='i'/>
 <arg declared_type='long long' type='q'/>
 <arg declared_type='long long' type='q'/>
@@ -486,25 +503,25 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setInputStream:'>
-<arg name='inputStream' declared_type='NSInputStream*' index='0' type='@'/>
+<arg index='0' declared_type='NSInputStream*' type='@' name='inputStream'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setOutputStream:'>
-<arg name='outputStream' declared_type='NSOutputStream*' index='0' type='@'/>
+<arg index='0' declared_type='NSOutputStream*' type='@' name='outputStream'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setRunLoopModes:'>
-<arg name='runLoopModes' declared_type='NSSet*' index='0' type='@'/>
+<arg index='0' declared_type='NSSet*' type='@' name='runLoopModes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setShouldExecuteAsBackgroundTaskWithExpirationHandler:'>
-<arg function_pointer='true' name='handler' declared_type='void (^)(void)' index='0' type='@?'>
+<arg function_pointer='true' index='0' declared_type='void (^)(void)' type='@?' name='handler'>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setUploadProgressBlock:'>
-<arg function_pointer='true' name='block' declared_type='void (^)(NSInteger, long long, long long)' index='0' type='@?'>
+<arg function_pointer='true' index='0' declared_type='void (^)(NSInteger, long long, long long)' type='@?' name='block'>
 <arg declared_type='NSInteger' type='i'/>
 <arg declared_type='long long' type='q'/>
 <arg declared_type='long long' type='q'/>
@@ -515,14 +532,14 @@
 </class>
 <class name='AFXMLRequestOperation'>
 <method class_method='true' selector='XMLParserRequestOperationWithRequest:success:failure:'>
-<arg name='urlRequest' declared_type='NSURLRequest*' index='0' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSXMLParser *)' index='1' type='@?'>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='urlRequest'/>
+<arg function_pointer='true' index='1' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSXMLParser *)' type='@?' name='success'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSXMLParser*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, NSXMLParser *)' index='2' type='@?'>
+<arg function_pointer='true' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, NSXMLParser *)' type='@?' name='failure'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -535,37 +552,475 @@
 <retval declared_type='NSXMLParser*' type='@'/>
 </method>
 </class>
+<class name='FBDialog'>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='dialogDidCancel:'>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogDidSucceed:'>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogWillAppear'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogWillDisappear'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dismissWithError:animated:'>
+<arg index='0' declared_type='NSError*' type='@' name='error'/>
+<arg index='1' declared_type='BOOL' type='B' name='animated'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dismissWithSuccess:animated:'>
+<arg index='0' declared_type='BOOL' type='B' name='success'/>
+<arg index='1' declared_type='BOOL' type='B' name='animated'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='getStringFromUrl:needle:'>
+<arg index='0' declared_type='NSString*' type='@' name='url'/>
+<arg index='1' declared_type='NSString*' type='@' name='needle'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='initWithURL:params:delegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='loadingURL'/>
+<arg index='1' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<arg index='2' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='load'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='loadURL:get:'>
+<arg index='0' declared_type='NSString*' type='@' name='url'/>
+<arg index='1' declared_type='NSDictionary*' type='@' name='getParams'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='params'>
+<retval declared_type='NSMutableDictionary*' type='@'/>
+</method>
+<method selector='setDelegate:'>
+<arg index='0' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setParams:'>
+<arg index='0' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='show'>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='FBLoginDialog'>
+<method selector='initWithURL:loginParams:delegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='loginURL'/>
+<arg index='1' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<arg index='2' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='FBRequest'>
+<method selector='connect'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='connection'>
+<retval declared_type='NSURLConnection*' type='@'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='error'>
+<retval declared_type='NSError*' type='@'/>
+</method>
+<method class_method='true' selector='getRequestWithParams:httpMethod:delegate:requestURL:'>
+<arg index='0' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<arg index='1' declared_type='NSString*' type='@' name='httpMethod'/>
+<arg index='2' declared_type='id' type='@' name='delegate'/>
+<arg index='3' declared_type='NSString*' type='@' name='url'/>
+<retval declared_type='FBRequest*' type='@'/>
+</method>
+<method selector='httpMethod'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='loading'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='params'>
+<retval declared_type='NSMutableDictionary*' type='@'/>
+</method>
+<method selector='responseText'>
+<retval declared_type='NSMutableData*' type='@'/>
+</method>
+<method class_method='true' selector='serializeURL:params:'>
+<arg index='0' declared_type='NSString*' type='@' name='baseUrl'/>
+<arg index='1' declared_type='NSDictionary*' type='@' name='params'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method class_method='true' selector='serializeURL:params:httpMethod:'>
+<arg index='0' declared_type='NSString*' type='@' name='baseUrl'/>
+<arg index='1' declared_type='NSDictionary*' type='@' name='params'/>
+<arg index='2' declared_type='NSString*' type='@' name='httpMethod'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='sessionDidExpire'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setConnection:'>
+<arg index='0' declared_type='NSURLConnection*' type='@' name='connection'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg index='0' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setError:'>
+<arg index='0' declared_type='NSError*' type='@' name='error'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHttpMethod:'>
+<arg index='0' declared_type='NSString*' type='@' name='httpMethod'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setParams:'>
+<arg index='0' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setResponseText:'>
+<arg index='0' declared_type='NSMutableData*' type='@' name='responseText'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUrl:'>
+<arg index='0' declared_type='NSString*' type='@' name='url'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='state'>
+<retval declared_type='FBRequestState' type='I'/>
+</method>
+<method selector='url'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='Facebook'>
+<method selector='accessToken'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='authorize:'>
+<arg index='0' declared_type='NSArray*' type='@' name='permissions'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialog:andDelegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='action'/>
+<arg index='1' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialog:andParams:andDelegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='action'/>
+<arg index='1' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<arg index='2' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='expirationDate'>
+<retval declared_type='NSDate*' type='@'/>
+</method>
+<method selector='extendAccessToken'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='extendAccessTokenIfNeeded'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='handleOpenURL:'>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='initWithAppId:andDelegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='appId'/>
+<arg index='1' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithAppId:urlSchemeSuffix:andDelegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='appId'/>
+<arg index='1' declared_type='NSString*' type='@' name='urlSchemeSuffix'/>
+<arg index='2' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isSessionValid'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='logout'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='requestWithGraphPath:andDelegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='graphPath'/>
+<arg index='1' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='FBRequest*' type='@'/>
+</method>
+<method selector='requestWithGraphPath:andParams:andDelegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='graphPath'/>
+<arg index='1' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<arg index='2' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='FBRequest*' type='@'/>
+</method>
+<method selector='requestWithGraphPath:andParams:andHttpMethod:andDelegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='graphPath'/>
+<arg index='1' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<arg index='2' declared_type='NSString*' type='@' name='httpMethod'/>
+<arg index='3' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='FBRequest*' type='@'/>
+</method>
+<method selector='requestWithMethodName:andParams:andHttpMethod:andDelegate:'>
+<arg index='0' declared_type='NSString*' type='@' name='methodName'/>
+<arg index='1' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<arg index='2' declared_type='NSString*' type='@' name='httpMethod'/>
+<arg index='3' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='FBRequest*' type='@'/>
+</method>
+<method selector='requestWithParams:andDelegate:'>
+<arg index='0' declared_type='NSMutableDictionary*' type='@' name='params'/>
+<arg index='1' declared_type='id' type='@' name='delegate'/>
+<retval declared_type='FBRequest*' type='@'/>
+</method>
+<method selector='sessionDelegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setAccessToken:'>
+<arg index='0' declared_type='NSString*' type='@' name='accessToken'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setExpirationDate:'>
+<arg index='0' declared_type='NSDate*' type='@' name='expirationDate'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSessionDelegate:'>
+<arg index='0' declared_type='id' type='@' name='sessionDelegate'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUrlSchemeSuffix:'>
+<arg index='0' declared_type='NSString*' type='@' name='urlSchemeSuffix'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shouldExtendAccessToken'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='urlSchemeSuffix'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
 <class name='NSObject'>
+<method selector='JSONFragment'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='JSONRepresentation'>
+<retval declared_type='NSString*' type='@'/>
+</method>
 <method selector='appendData:'>
-<arg name='data' declared_type='NSData*' index='0' type='@'/>
+<arg index='0' declared_type='NSData*' type='@' name='data'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendPartWithFileData:name:fileName:mimeType:'>
-<arg name='data' declared_type='NSData*' index='0' type='@'/>
-<arg name='name' declared_type='NSString*' index='1' type='@'/>
-<arg name='fileName' declared_type='NSString*' index='2' type='@'/>
-<arg name='mimeType' declared_type='NSString*' index='3' type='@'/>
+<arg index='0' declared_type='NSData*' type='@' name='data'/>
+<arg index='1' declared_type='NSString*' type='@' name='name'/>
+<arg index='2' declared_type='NSString*' type='@' name='fileName'/>
+<arg index='3' declared_type='NSString*' type='@' name='mimeType'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendPartWithFileURL:name:error:'>
-<arg name='fileURL' declared_type='NSURL*' index='0' type='@'/>
-<arg name='name' declared_type='NSString*' index='1' type='@'/>
-<arg name='error' declared_type='NSError**' index='2' type='^@'/>
+<arg index='0' declared_type='NSURL*' type='@' name='fileURL'/>
+<arg index='1' declared_type='NSString*' type='@' name='name'/>
+<arg index='2' declared_type='NSError**' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='appendPartWithFormData:name:'>
-<arg name='data' declared_type='NSData*' index='0' type='@'/>
-<arg name='name' declared_type='NSString*' index='1' type='@'/>
+<arg index='0' declared_type='NSData*' type='@' name='data'/>
+<arg index='1' declared_type='NSString*' type='@' name='name'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendPartWithHeaders:body:'>
-<arg name='headers' declared_type='NSDictionary*' index='0' type='@'/>
-<arg name='body' declared_type='NSData*' index='1' type='@'/>
+<arg index='0' declared_type='NSDictionary*' type='@' name='headers'/>
+<arg index='1' declared_type='NSData*' type='@' name='body'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendString:'>
-<arg name='string' declared_type='NSString*' index='0' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='string'/>
 <retval declared_type='void' type='v'/>
+</method>
+<method selector='dialog:didFailWithError:'>
+<arg index='0' declared_type='FBDialog*' type='@' name='dialog'/>
+<arg index='1' declared_type='NSError*' type='@' name='error'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialog:shouldOpenURLInExternalBrowser:'>
+<arg index='0' declared_type='FBDialog*' type='@' name='dialog'/>
+<arg index='1' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='dialogCompleteWithUrl:'>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogDidComplete:'>
+<arg index='0' declared_type='FBDialog*' type='@' name='dialog'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogDidNotComplete:'>
+<arg index='0' declared_type='FBDialog*' type='@' name='dialog'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogDidNotCompleteWithUrl:'>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDialogLogin:expirationDate:'>
+<arg index='0' declared_type='NSString*' type='@' name='token'/>
+<arg index='1' declared_type='NSDate*' type='@' name='expirationDate'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDialogNotLogin:'>
+<arg index='0' declared_type='BOOL' type='B' name='cancelled'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDidExtendToken:expiresAt:'>
+<arg index='0' declared_type='NSString*' type='@' name='accessToken'/>
+<arg index='1' declared_type='NSDate*' type='@' name='expiresAt'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDidLogin'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDidLogout'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDidNotLogin:'>
+<arg index='0' declared_type='BOOL' type='B' name='cancelled'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbSessionInvalidated'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='humanReadable'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='objectWithString:'>
+<arg index='0' declared_type='NSString*' type='@' name='repr'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='proxyForJson'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='request:didFailWithError:'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<arg index='1' declared_type='NSError*' type='@' name='error'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='request:didLoad:'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<arg index='1' declared_type='id' type='@' name='result'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='request:didLoadRawResponse:'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<arg index='1' declared_type='NSData*' type='@' name='data'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='request:didReceiveResponse:'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<arg index='1' declared_type='NSURLResponse*' type='@' name='response'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='requestLoading:'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHumanReadable:'>
+<arg index='0' declared_type='BOOL' type='B' name='humanReadable'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSortKeys:'>
+<arg index='0' declared_type='BOOL' type='B' name='sortKeys'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sortKeys'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='stringWithObject:'>
+<arg index='0' declared_type='id' type='@' name='value'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='NSString'>
+<method selector='JSONFragmentValue'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='JSONValue'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='SBJSON'>
+<method selector='fragmentWithString:error:'>
+<arg index='0' declared_type='NSString*' type='@' name='jsonrep'/>
+<arg index='1' declared_type='NSError**' type='^@' name='error'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='objectWithString:allowScalar:error:'>
+<arg index='0' declared_type='id' type='@' name='value'/>
+<arg index='1' declared_type='BOOL' type='B' name='x'/>
+<arg index='2' declared_type='NSError**' type='^@' name='error'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='objectWithString:error:'>
+<arg index='0' declared_type='NSString*' type='@' name='jsonrep'/>
+<arg index='1' declared_type='NSError**' type='^@' name='error'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='stringWithFragment:error:'>
+<arg index='0' declared_type='id' type='@' name='value'/>
+<arg index='1' declared_type='NSError**' type='^@' name='error'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='stringWithObject:allowScalar:error:'>
+<arg index='0' declared_type='id' type='@' name='value'/>
+<arg index='1' declared_type='BOOL' type='B' name='x'/>
+<arg index='2' declared_type='NSError**' type='^@' name='error'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='stringWithObject:error:'>
+<arg index='0' declared_type='id' type='@' name='value'/>
+<arg index='1' declared_type='NSError**' type='^@' name='error'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='SBJsonBase'>
+<method selector='addErrorWithCode:description:'>
+<arg index='0' declared_type='NSUInteger' type='I' name='code'/>
+<arg index='1' declared_type='NSString*' type='@' name='str'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='clearErrorTrace'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='errorTrace'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='maxDepth'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='setMaxDepth:'>
+<arg index='0' declared_type='NSUInteger' type='I' name='maxDepth'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='SBJsonParser'>
+<method selector='fragmentWithString:'>
+<arg index='0' declared_type='id' type='@' name='repr'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='SBJsonWriter'>
+<method selector='stringWithFragment:'>
+<arg index='0' declared_type='id' type='@' name='value'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 </class>
 <class name='UIImageView'>
@@ -573,24 +1028,24 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setImageWithURL:'>
-<arg name='url' declared_type='NSURL*' index='0' type='@'/>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setImageWithURL:placeholderImage:'>
-<arg name='url' declared_type='NSURL*' index='0' type='@'/>
-<arg name='placeholderImage' declared_type='UIImage*' index='1' type='@'/>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
+<arg index='1' declared_type='UIImage*' type='@' name='placeholderImage'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setImageWithURLRequest:placeholderImage:success:failure:'>
-<arg name='urlRequest' declared_type='NSURLRequest*' index='0' type='@'/>
-<arg name='placeholderImage' declared_type='UIImage*' index='1' type='@'/>
-<arg function_pointer='true' name='success' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' index='2' type='@?'>
+<arg index='0' declared_type='NSURLRequest*' type='@' name='urlRequest'/>
+<arg index='1' declared_type='UIImage*' type='@' name='placeholderImage'/>
+<arg function_pointer='true' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' type='@?' name='success'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='UIImage*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg function_pointer='true' name='failure' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' index='3' type='@?'>
+<arg function_pointer='true' index='3' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' type='@?' name='failure'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -601,35 +1056,159 @@
 </class>
 <informal_protocol name='AFMultipartFormData'>
 <method selector='appendData:' type='v12@0:4@8'>
-<arg name='data' declared_type='NSData*' index='0' type='@'/>
+<arg index='0' declared_type='NSData*' type='@' name='data'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendPartWithFileData:name:fileName:mimeType:' type='v24@0:4@8@12@16@20'>
-<arg name='data' declared_type='NSData*' index='0' type='@'/>
-<arg name='name' declared_type='NSString*' index='1' type='@'/>
-<arg name='fileName' declared_type='NSString*' index='2' type='@'/>
-<arg name='mimeType' declared_type='NSString*' index='3' type='@'/>
+<arg index='0' declared_type='NSData*' type='@' name='data'/>
+<arg index='1' declared_type='NSString*' type='@' name='name'/>
+<arg index='2' declared_type='NSString*' type='@' name='fileName'/>
+<arg index='3' declared_type='NSString*' type='@' name='mimeType'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendPartWithFileURL:name:error:' type='B20@0:4@8@12^@16'>
-<arg name='fileURL' declared_type='NSURL*' index='0' type='@'/>
-<arg name='name' declared_type='NSString*' index='1' type='@'/>
-<arg name='error' declared_type='NSError**' index='2' type='^@'/>
+<arg index='0' declared_type='NSURL*' type='@' name='fileURL'/>
+<arg index='1' declared_type='NSString*' type='@' name='name'/>
+<arg index='2' declared_type='NSError**' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='appendPartWithFormData:name:' type='v16@0:4@8@12'>
-<arg name='data' declared_type='NSData*' index='0' type='@'/>
-<arg name='name' declared_type='NSString*' index='1' type='@'/>
+<arg index='0' declared_type='NSData*' type='@' name='data'/>
+<arg index='1' declared_type='NSString*' type='@' name='name'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendPartWithHeaders:body:' type='v16@0:4@8@12'>
-<arg name='headers' declared_type='NSDictionary*' index='0' type='@'/>
-<arg name='body' declared_type='NSData*' index='1' type='@'/>
+<arg index='0' declared_type='NSDictionary*' type='@' name='headers'/>
+<arg index='1' declared_type='NSData*' type='@' name='body'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendString:' type='v12@0:4@8'>
-<arg name='string' declared_type='NSString*' index='0' type='@'/>
+<arg index='0' declared_type='NSString*' type='@' name='string'/>
 <retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='FBDialogDelegate'>
+<method selector='dialog:didFailWithError:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='FBDialog*' type='@' name='dialog'/>
+<arg index='1' declared_type='NSError*' type='@' name='error'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialog:shouldOpenURLInExternalBrowser:' type='B16@0:4@8@12'>
+<arg index='0' declared_type='FBDialog*' type='@' name='dialog'/>
+<arg index='1' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='dialogCompleteWithUrl:' type='v12@0:4@8'>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogDidComplete:' type='v12@0:4@8'>
+<arg index='0' declared_type='FBDialog*' type='@' name='dialog'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogDidNotComplete:' type='v12@0:4@8'>
+<arg index='0' declared_type='FBDialog*' type='@' name='dialog'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dialogDidNotCompleteWithUrl:' type='v12@0:4@8'>
+<arg index='0' declared_type='NSURL*' type='@' name='url'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='FBLoginDialogDelegate'>
+<method selector='fbDialogLogin:expirationDate:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='NSString*' type='@' name='token'/>
+<arg index='1' declared_type='NSDate*' type='@' name='expirationDate'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDialogNotLogin:' type='v12@0:4B8'>
+<arg index='0' declared_type='BOOL' type='B' name='cancelled'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='FBRequestDelegate'>
+<method selector='request:didFailWithError:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<arg index='1' declared_type='NSError*' type='@' name='error'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='request:didLoad:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<arg index='1' declared_type='id' type='@' name='result'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='request:didLoadRawResponse:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<arg index='1' declared_type='NSData*' type='@' name='data'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='request:didReceiveResponse:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<arg index='1' declared_type='NSURLResponse*' type='@' name='response'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='requestLoading:' type='v12@0:4@8'>
+<arg index='0' declared_type='FBRequest*' type='@' name='request'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='FBSessionDelegate'>
+<method selector='fbDidExtendToken:expiresAt:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='NSString*' type='@' name='accessToken'/>
+<arg index='1' declared_type='NSDate*' type='@' name='expiresAt'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDidLogin' type='v8@0:4'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDidLogout' type='v8@0:4'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbDidNotLogin:' type='v12@0:4B8'>
+<arg index='0' declared_type='BOOL' type='B' name='cancelled'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fbSessionInvalidated' type='v8@0:4'>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='NSObject_SBJSON'>
+<method selector='JSONFragment' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='JSONRepresentation' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SBJsonParser'>
+<method selector='objectWithString:' type='@12@0:4@8'>
+<arg index='0' declared_type='NSString*' type='@' name='repr'/>
+<retval declared_type='id' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SBJsonWriter'>
+<method selector='humanReadable' type='B8@0:4'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setHumanReadable:' type='v12@0:4B8'>
+<arg index='0' declared_type='BOOL' type='B' name='humanReadable'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSortKeys:' type='v12@0:4B8'>
+<arg index='0' declared_type='BOOL' type='B' name='sortKeys'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sortKeys' type='B8@0:4'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='stringWithObject:' type='@12@0:4@8'>
+<arg index='0' declared_type='id' type='@' name='value'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='SBProxyForJson'>
+<method selector='proxyForJson' type='@8@0:4'>
+<retval declared_type='id' type='@'/>
 </method>
 </informal_protocol>
 </signatures>

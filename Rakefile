@@ -12,8 +12,8 @@ Motion::Project::App.setup do |app|
   app.info_plist['CFBundleURLTypes'] = [{'CFBundleURLSchemes' => ['fb108912452551780']}]
   
   app.pods do
-    dependency 'Facebook-iOS-SDK'
     dependency 'AFNetworking'
+    dependency 'Facebook-iOS-SDK'
   end
   
 end

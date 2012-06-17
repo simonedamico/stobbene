@@ -1,4 +1,6 @@
 class LoginController < UIViewController
+  attr_accessor :facebook
+  
   def init
     if super
     end
@@ -8,22 +10,28 @@ class LoginController < UIViewController
   
   def loadView
     self.view = LoginView.alloc.init
-    self.view.username_field.delegate = self
-    self.view.password_field.delegate = self
+    self.view.facebook_button.addTarget(self, action:'login_with_facebook', forControlEvents:UIControlEventTouchUpInside)
   end
 
-  def textFieldDidEndEditing(textField)
-    case textField
-    when self.view.username_field
-      @username = self.view.username_field.text
-    when self.view.password_field
-      @password = self.view.password_field.text
+
+  def login_with_facebook
+    completion_block = lambda do
+      
+      success_block = lambda do |request, response, result|
+        App.delegate.window.rootViewController = HowAreYouController.alloc.init
+      end
+      failure_block = lambda do |request, response, result|
+        puts "NOOOO"
+      end
+
+      API.login_with_facebook(App::Persistence['FBAccessTokenKey'], success_block, failure_block)
+      
+      
     end
-  end
 
-  def textFieldShouldReturn(textField)
-    textField.resignFirstResponder
-    true
+    App.delegate.login_with_facebook(completion_block)
+    
+          
   end
   
 end

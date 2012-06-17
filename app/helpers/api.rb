@@ -2,7 +2,7 @@ module API
   METWIT_BASE_URL = "https://api.metwit.me/"
   @http_client = AFHTTPClient.alloc.initWithBaseURL(NSURL.URLWithString(METWIT_BASE_URL))
 
-  def json_request_operation(url_request, success_block, fail_block)
+  def self.json_request_operation(url_request, success_block, fail_block)
     @int_success_block = lambda do |request, response, json|
       result = json['result']
       api_error = json['error']
@@ -27,18 +27,20 @@ module API
         
     end
         
-    AFJSONRequestOperation.JSONRequestOperationWithRequest(url_request, int_success_block, int_fail_block)
-np
+    AFJSONRequestOperation.JSONRequestOperationWithRequest(url_request, success:@int_success_block, failure:@int_fail_block)
+
   end
   
-  def login_with_facebook(access_token, success_block, fail_block)
-    SCFacebook.loginCallBack do |success, result|
-      
-    end
+  def self.login_with_facebook(access_token, success_block, fail_block)
+    params = {'access_token' => access_token}
+    url_request = @http_client.requestWithMethod("POST", path:"users/login/facebook/token/", parameters:params)
+    operation = json_request_operation(url_request, success_block, fail_block)
     
+    NSOperationQueue.alloc.init.addOperation(operation)
+
   end
 
-  def logout
+  def self.logout
   end
   
 end

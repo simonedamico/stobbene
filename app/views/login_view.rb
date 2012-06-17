@@ -1,28 +1,20 @@
 class LoginView < UIView
-  attr_reader :username_field, :password_field
+  attr_reader :facebook_button
   def initWithFrame(rect)
     if super(rect)
       self.backgroundColor = UIColor.whiteColor
       
-      @username_field = UITextField.alloc.init
-      @username_field.placeholder = "username"
-      @username_field.bounds = CGRectMake(0,0,300,50)
-      @username_field.borderStyle = UITextBorderStyleBezel
-      self.addSubview(@username_field)
-
-      @password_field = UITextField.alloc.init
-      @password_field.placeholder = "password"
-      @password_field.bounds = CGRectMake(0,0,300,50)
-      @password_field.borderStyle = UITextBorderStyleBezel
-      self.addSubview(@password_field)
+      @facebook_button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
+      @facebook_button.setTitle('Enter with Facebook', forState: UIControlStateNormal)
+      @facebook_button.sizeToFit
+      self.addSubview(@facebook_button)
       
     end
     self
   end
 
   def layoutSubviews
-    @username_field.center = CGPoint.new(self.bounds.size.width/2, self.bounds.size.height/5*2)
-    @password_field.center = CGPoint.new(self.bounds.size.width/2, self.bounds.size.height/5*4)
+    @facebook_button.center = CGPoint.new(self.bounds.size.width/2, self.bounds.size.height/2)
   end
   
 end
